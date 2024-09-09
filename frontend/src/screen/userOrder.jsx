@@ -5,10 +5,10 @@ import Footer from "../components/Footer";
 const AllOrder = () => {
   const [orderData, setorderData] = useState([]);
   const dataEmail = localStorage.getItem("userEmail");
-  const url = "https://temporary-five.vercel.app";
+  // const url = "https://temporary-five.vercel.app";
 
   const loadData = async () => {
-    const res = await fetch(url + `myorderdata?email=${dataEmail}`, {
+    const res = await fetch('https://fd-app-qhnt.vercel.app/' + `myorderdata?email=${dataEmail}`, {
       method: "GET",
       headers: {
         "content-Type": "application/json",

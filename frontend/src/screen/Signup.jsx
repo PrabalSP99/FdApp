@@ -11,7 +11,7 @@ const Signup = () => {
    const navigate= useNavigate();
   const handleSubmit = async(e)=>{
        e.preventDefault();
-       const response = await fetch('https://temporary-five.vercel.app/users/signup',{
+       const response = await fetch('https://fd-app-qhnt.vercel.app/users/signup',{
         method: 'POST',
         headers:{
                'Content-Type':'application/json'

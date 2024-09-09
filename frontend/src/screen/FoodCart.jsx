@@ -29,7 +29,7 @@ import {useCart,useDispatchCart} from '../components/ContextReducer'
       products:Data 
    }
 
-     const response = await fetch('https://temporary-five.vercel.app/api/create-checkout-session',{
+     const response = await fetch('https://fd-app-qhnt.vercel.app/api/create-checkout-session',{
          method: 'POST',
          headers:{
           'Content-Type':'application/json'
