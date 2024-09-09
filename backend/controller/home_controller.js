@@ -1,3 +1,5 @@
 module.exports.home= (req,res)=>{
-    return res.end('hello');
+    return res.json({
+    message:'this is the home page'
+    });
 }
