@@ -6,10 +6,11 @@ const app= express();
 const cors = require('cors')
 
 
-const port = 5000
+const port = 5000 || process.env.PORT
 app.use(cors(
     {
-      origin: "http://localhost:3000",
+      // 
+      origin: "https://fd-app-five.vercel.app/",
       methods: ["POST", "GET", "DELETE", "PUT"],
       credentials: true
     }
