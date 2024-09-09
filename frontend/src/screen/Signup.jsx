@@ -9,26 +9,34 @@ const Signup = () => {
   //  const url ='https://temporary-five.vercel.app';
 
    const navigate= useNavigate();
+
   const handleSubmit = async(e)=>{
        e.preventDefault();
-       const response = await fetch('https://fd-app-qhnt.vercel.app/users/signup',{
-        method: 'POST',
-        headers:{
-               'Content-Type':'application/json'
-        },
-        body:JSON.stringify({name: data.name, email:data.email, password: data.password, location:data.location})
-       })
+       try{
+        const response = await fetch('https://fd-app-qhnt.vercel.app/users/signup',{
+          method: 'POST',
+          headers:{
+                 'Content-Type':'application/json'
+          },
+          body:JSON.stringify({name: data.name, email:data.email, password: data.password, location:data.location})
+         })
+  
+         const json = response.json();
+         if(!json.success){
+          alert("Enter valid credentials"); 
+         }
+         navigate('/login');
 
-       const json = await response.json();
+       }
+       catch(error){
+        console.log(error)
+       }
       //  console.log(json)
 
       
 
-       if(!json.success){
-        alert("Enter valid credentials"); 
-       }
+      
 
-       navigate('/login');
   }
 
   function handle(event){
