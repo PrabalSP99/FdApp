@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const AllOrder = () => {
   const [orderData, setorderData] = useState([]);
   const dataEmail = localStorage.getItem("userEmail");
-  // const url = "https://temporary-five.vercel.app";
 
-  const loadData = async () => {
-    const res = await fetch('https://fd-app-qhnt.vercel.app/' + `myorderdata?email=${dataEmail}`, {
-      method: "GET",
-      headers: {
-        "content-Type": "application/json",
-      },
-    });
+  useEffect(() => {
+    const loadData = async () => {
+      const res = await fetch('https://fd-app-qhnt.vercel.app/' + `myorderdata?email=${dataEmail}`, {
+        method: "GET",
+        headers: {
+          "content-Type": "application/json",
+        },
+      });
+  
+      let response = await res.json();
+      setorderData(response?.order_data);
+    };
+    loadData();
+  }, []);
 
-    let response = await res.json();
-    setorderData(response?.order_data);
-    //   console.log(response?.order_data);
-  };
+  
 
-  // useEffect(() => {
-  //   loadData();
-  // }, [loadData]);
-  loadData();
+  
 
   return (
     <div>
