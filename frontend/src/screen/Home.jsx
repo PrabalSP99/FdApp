@@ -15,9 +15,10 @@ const Home = () => {
     useEffect(()=>{
         async function getCart(){
             try{
-                let response = await  axios.get('https://fd-app-qhnt.vercel.app/cart');
+                let response = await  axios.get('https://fd-app-qhnt.vercel.app'+'/cart');
           
                 setfoodcat(response.data[1]);
+                console.log(response.data[1]);
                 setfooditem(response.data[0]);
             }
             catch(error){

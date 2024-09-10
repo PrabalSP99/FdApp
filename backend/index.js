@@ -10,8 +10,9 @@ const port = 5000 || process.env.PORT
 app.use(cors(
     {
       // 
-      origin: "https://fd-app-five.vercel.app/",
+      origin: 'https://fd-app-qhnt.vercel.app',
       methods: ["POST", "GET", "DELETE", "PUT"],
+      optionsSuccessStatus: 200,
       credentials: true
     }
   ));
