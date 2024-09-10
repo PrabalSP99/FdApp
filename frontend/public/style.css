@@ -1,0 +1,43 @@
+/* For tablets */
+@media (max-width: 768px) {
+  .your-container {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Adjust layout, margins, paddings for tablet */
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .your-container {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  /* Adjust layout, margins, paddings for mobile */
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 100%; /* Full width on smaller screens */
+}
+
+@media (min-width: 768px) {
+  .item {
+    flex: 1 1 50%; /* Two items per row on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .item {
+    flex: 1 1 33%; /* Three items per row on larger screens */
+  }
+}
