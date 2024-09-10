@@ -24,7 +24,7 @@ function Login() {
 
     const json =  response.json();
 
-    if (!json.success) {
+    if (json.success) {
       alert("Enter valid credentials");
     }
     else{

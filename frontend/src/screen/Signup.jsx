@@ -22,16 +22,20 @@ const Signup = () => {
          })
   
          const json = response.json();
-         if(!json.success){
+        
+         if(json.success){
           alert("Enter valid credentials"); 
+
          }
-         navigate('/login');
+         else{
+          navigate('/login');
+
+        }
 
        }
        catch(error){
         console.log(error)
        }
-      //  console.log(json)
 
       
 
