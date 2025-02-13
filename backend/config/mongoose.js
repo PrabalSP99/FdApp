@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const mongourl = 'mongodb+srv://PrabalSingh:Ho4YX0LZG2uON82t@mydatabase.kkl1axg.mongodb.net/?retryWrites=true&w=majority';
-
+require('dotenv').config();
+const db = process.env.Mongouri;
 
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect(mongourl,{useNewUrlParser:true}).then(async(result)=>{
+  await mongoose.connect(db,{useNewUrlParser:true}).then(async(result)=>{
     console.log('connected successfully');
     })
     
